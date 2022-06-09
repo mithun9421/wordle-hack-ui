@@ -22,7 +22,7 @@ function App() {
     }
     setMatchedWords([])
     setWordSearchLoading(true)
-    let apiResponse = await axios.post("http://localhost:8000/getMatchingWords", input);
+    let apiResponse = await axios.post("https://wordle-hacker.herokuapp.com/getMatchingWords", input);
     apiResponse?.data?.status == 200 ? setMatchedWords(apiResponse?.data?.matchingWords) : setError(getErrorCodeResponse(apiResponse?.data?.status))
     setWordSearchLoading(false)
   }
